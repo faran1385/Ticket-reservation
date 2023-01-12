@@ -13,7 +13,7 @@
 <header>
     <div class="navbar navbar-light shadow-lg navbar-expand-lg" style="height: 4rem">
         <div class="container-fluid">
-            <div class="navbar-brand">
+            <div class="navbar-brand me-5">
                 <a href="#" target="_blank">
                     <img src="./images/logo.png" class="ms-5" style="width: 4rem;height: 4rem">
                 </a>
@@ -25,13 +25,34 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <div class="dropdown">
-                            <button class="" data-bs-toggle="dropdown" data-bs-target="">
-
-                            </button>
-                            <div class="dropdown-menu" id="">
-
-                            </div>
+                            <a href="#" data-bs-toggle="dropdown" data-bs-target="navbar-ticket-dropdown-menu" class="dropdown-toggle nav-link fs-4">
+                                Ticket
+                            </a>
+                            <ul class="dropdown-menu" id="navbar-ticket-dropdown-menu">
+                               <li class="dropdown-item">Domestic flight</li>
+                                <li class="dropdown-divider"></li>
+                               <li class="dropdown-item">International flights</li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-item">Train</li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-item">Bus</li>
+                            </ul>
                         </div>
+                    </li>
+                    <li class="nav-item ms-5">
+                        <div class="dropdown ">
+                            <a href="#" data-bs-toggle="dropdown" data-bs-target="" class="navbar-stay-dropdown-menu fs-4 nav-link dropdown-toggle">
+                                stay
+                            </a>
+                            <ul class="dropdown-menu " id="navbar-stay-dropdown-menu">
+                                <li class="dropdown-item">Hotel</li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-item">Villa and residence</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item ms-5 fs-4">
+                        <a href="#" class="nav-link">tour</a>
                     </li>
                 </ul>
             </div>
