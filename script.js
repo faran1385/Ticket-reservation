@@ -36,8 +36,8 @@ $(()=>{
                 for (let i=0;i<dropdownsNumber;i++){
                     $('.dropdowns-place').append(`<div class="mb-3 me-5">
                     <div class="dropdown dropdown-center position-relative" style="left: .5rem">
-                        <button class="dropdown-toggle rounded-pill bg-white border border-1 text-muted"
-                                style="width: 6rem" data-bs-toggle="dropdown"
+                        <button class="dropdown-toggle rounded-pill bg-white border border-1 fw-bold text-muted"
+                                data-bs-toggle="dropdown"
                                 data-bs-target="#card-dropdown-menu${i}">${data.dropdownTitle[i]}
                         </button>
                         <ul class="dropdown-menu" id="card-dropdown-menu${i}">
@@ -48,9 +48,10 @@ $(()=>{
                 }
                 $(data.dropdownItems).each((index,itemNumber)=>{
                     for(let i=0;i<itemNumber;i++){
-                        $(`#card-dropdown-menu${index}`).append(`<li class="dropdown-item"><a class="nav-link" href="#">${data.dropdownItemsInner[index][i]}</a></li>`)
-                        if((i%2)===0){
-                            $(`#card-dropdown-menu${index}`).append(`<li class="dropdown-divider"></li>`)
+                        if(((i+1)===itemNumber)==false){
+                            $(`#card-dropdown-menu${index}`).append(`<li class="dropdown-item"><a class="nav-link" href="#">${data.dropdownItemsInner[index][i]}</a></li><li class="dropdown-divider"></li>`)
+                        }else {
+                            $(`#card-dropdown-menu${index}`).append(`<li class="dropdown-item"><a class="nav-link" href="#">${data.dropdownItemsInner[index][i]}</a>`)
                         }
                     }
                 })
@@ -114,26 +115,54 @@ $(()=>{
         }
     })
 })
-// fetch('https://ticket-reservation-fa3df-default-rtdb.firebaseio.com/servicesDropdowns/_NMoL8r-GB6AmDg2TILT.json',{
-//     method:'Put',
-//     headers:{
-//         'Content-Type':'application/json'
-//     },
-//     body:JSON.stringify({
-//         outerFlight:{
-//             name:'outerFlight',
-//             dropdowns:'2',
-//             dropdownItems:[2,4],
-//             dropdownItemsInner:[['shit','xnfs'],['shit','xdf']],
-//             dropdownTitle:['one way','shit']
-//         },
-//         innerFlight:{
-//             name:'outerFlight',
-//             dropdowns:'2',
-//             dropdownItems:[2,4],
-//             dropdownItemsInner:[['shit','xnfs'],['shit','xdf']],
-//             dropdownTitle:['one way1','shit']
-//         }
-//     })
-// })
+fetch('https://ticket-reservation-fa3df-default-rtdb.firebaseio.com/servicesDropdowns/_NMoL8r-GB6AmDg2TILT.json',{
+    method:'Put',
+    headers:{
+        'Content-Type':'application/json'
+    },
+    body:JSON.stringify({
+        innerFlight:{
+            name:'outerFlight',
+            dropdowns:'1',
+            dropdownItems:[2],
+            dropdownItemsInner:[['one way','back and forth']],
+            dropdownTitle:['one way']
+        },
+        outerFlight:{
+            name:'outerFlight',
+            dropdowns:'2',
+            dropdownItems:[3,5],
+            dropdownItemsInner:[['one way','back and forth','multi-track'],['economy','Premium Economy','business','first','Premium First']],
+            dropdownTitle:['one way','economy']
+        },
+        train:{
+            name:'train',
+            dropdowns:'4',
+            dropdownItems:[2,2,3,2],
+            dropdownItemsInner:[['one way','back and forth'],['i do not want shutter','i do want shutter'],['ordinary passengers','brothers','sisters'],['I do not want to transport a car','I do want to transport a car']],
+            dropdownTitle:['one way','i do not want shutter','ordinary passengers','I do not want to transport a car']
+        },
+        bus:{
+            name:'bus',
+            dropdowns:'0',
+            dropdownItems:[],
+            dropdownItemsInner:[],
+            dropdownTitle:[]
+        },
+        tour:{
+            name:'tour',
+            dropdowns:'0',
+            dropdownItems:[],
+            dropdownItemsInner:[],
+            dropdownTitle:[]
+        },
+        hotel:{
+            name:'hotel',
+            dropdowns:'0',
+            dropdownItems:[],
+            dropdownItemsInner:[],
+            dropdownTitle:[]
+        },
+    })
+})
 
