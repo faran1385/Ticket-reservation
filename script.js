@@ -56,4 +56,11 @@ $(()=>{
         }
     })
 
+    $('.services').each((index,element)=>{
+        $(element).click(()=>{
+            $('.activedTitle').addClass('card-header-items-hover')
+            $('.activedTitle').removeClass('activedTitle text-primary')
+            $(element).addClass('text-primary activedTitle card-header-items-hover')
+        })
+    })
 })
